@@ -1,0 +1,94 @@
+.navbar {
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  padding: 1rem 7rem;
+  background-color: #fff;
+  box-shadow: 0 0 10px #0000001a;
+  z-index: 2;
+  top: 0;
+}
+
+.logo {
+  width: 105px;
+  height: auto;
+  cursor: pointer;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+  color: #000;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.nav-links a:before {
+  content: "";
+  background: #fe8882;
+  display: block;
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-links a:hover {
+  background-position: 0;
+}
+
+.nav-links a:hover::before {
+  width: 100%;
+}
+
+.nav-links a:visited {
+  color: black;
+}
+
+.burger-menu {
+  display: none;
+}
+
+@media (max-width: 760px) {
+  .navbar {
+    padding: 15px 50px;
+  }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    width: 100%;
+    z-index: 1;
+    text-align: center;
+    padding: 15px;
+  }
+
+  .nav-links.open {
+    display: flex; /* Show the navigation links when the hamburger menu is clicked */
+  }
+
+  .burger-menu {
+    cursor: pointer;
+    display: block;
+  }
+
+  .menu-icon {
+    width: 40px;
+    height: 40px;
+  }
+}
