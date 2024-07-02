@@ -24,4 +24,7 @@ dist-ssr
 *.sw?
 
 # api keys    
-.env
+*.env
+*.env.example
+*.env.local
+*.env.staging
