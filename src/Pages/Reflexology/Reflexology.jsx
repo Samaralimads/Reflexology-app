@@ -3,7 +3,7 @@ import "./Reflexology.css";
 
 function Reflexology() {
   return (
-    <div>
+    <div className="reflexology-section">
       <section className="intro-section">
         <h1>Libérer le Potentiel de Votre Corps à Travers les Pieds</h1>
         <p>
