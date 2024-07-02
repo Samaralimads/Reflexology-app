@@ -14,7 +14,7 @@ function Contact() {
           <p>110 Quai Saint-Ivy</p>
           <p>Saint-Pierre-Quiberon </p>
           <p>Phone: (33) 06 76 47 15 50</p>
-          <p>Email: get the email</p>
+          <p>Email: get email</p>
         </div>
 
         <iframe
