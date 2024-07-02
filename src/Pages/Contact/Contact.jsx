@@ -2,6 +2,7 @@ import React from "react";
 import "./Contact.css";
 
 function Contact() {
+  require("dotenv").config();
   const API_KEY = import.meta.env.VITE_API_URL;
   const mapSrc = `https://www.google.com/maps/embed/v1/place?q=place_id:ChIJzd18ech95kcRHewygM4yDE0&key=${API_KEY}`;
 
