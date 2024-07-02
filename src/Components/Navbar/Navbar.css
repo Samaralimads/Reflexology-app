@@ -11,18 +11,22 @@
   top: 0;
 }
 
-.logo {
+.navLogo {
   width: 105px;
   height: auto;
   cursor: pointer;
 }
 
-.nav-links {
+.logoName {
+  font-size: 1rem;
+}
+
+.navLinks {
   display: flex;
   gap: 2.2rem;
 }
 
-.nav-links a {
+.navLink {
   text-decoration: none;
   display: inline-block;
   position: relative;
@@ -65,7 +69,7 @@
   .navbar {
     padding: 15px 50px;
   }
-  .nav-links {
+  .navLinks {
     display: none;
     flex-direction: column;
     position: absolute;
@@ -78,7 +82,7 @@
     padding: 15px;
   }
 
-  .nav-links.open {
+  .navLinks.open {
     display: flex; /* Show the navigation links when the hamburger menu is clicked */
   }
 

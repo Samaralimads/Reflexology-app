@@ -24,14 +24,6 @@ function About() {
             certified reflexologist, trained in the latest techniques and
             approaches to provide a personalized and transformative experience.
           </p>
-          <div className="cta-buttons">
-            <a href="#">
-              <button lassName="learn-more-button">Learn More</button>
-            </a>
-            <a href="#">
-              <button lassName="book-now-button">Book Now</button>
-            </a>
-          </div>
         </div>
       </div>
     </section>
