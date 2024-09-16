@@ -9,9 +9,7 @@ function About() {
           <img
             alt="Reflexologist"
             className="section-image"
-            height="310"
-            src="/placeholder.svg"
-            width="550"
+            src="/Dominique.jpeg"
           />
         </div>
         <div>

@@ -4,6 +4,7 @@ import { NavLink, Link } from "react-router-dom";
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false); // State to handle dropdown
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -13,6 +14,14 @@ function Navbar() {
     if (isMenuOpen) {
       setIsMenuOpen(false);
     }
+  };
+
+  const handleMouseEnter = () => {
+    setIsDropdownOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsDropdownOpen(false);
   };
 
   return (
@@ -28,10 +37,52 @@ function Navbar() {
         <NavLink to="/about" className="navLink" onClick={closeMenu}>
           About Me
         </NavLink>
-        <NavLink to="/Reflexologie" className="navLink" onClick={closeMenu}>
-          Reflexologie
+
+        {/* Reflexologie Dropdown */}
+        <div
+          className="navLink dropdown"
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
+          <span className="navLink">Reflexologie</span>
+          {isDropdownOpen && (
+            <ul className="dropdown-menu">
+              <li>
+                <NavLink
+                  to="/benefices"
+                  className="dropdown-item"
+                  onClick={closeMenu}
+                >
+                  Les Benefices
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/soins"
+                  className="dropdown-item"
+                  onClick={closeMenu}
+                >
+                  Les Soins
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/avis"
+                  className="dropdown-item"
+                  onClick={closeMenu}
+                >
+                  Avis
+                </NavLink>
+              </li>
+            </ul>
+          )}
+        </div>
+
+        <NavLink to="/tarifs" className="navLink" onClick={closeMenu}>
+          Tarifs
         </NavLink>
-        <NavLink to="/Contact" className="navLink" onClick={closeMenu}>
+
+        <NavLink to="/contact" className="navLink" onClick={closeMenu}>
           Contact
         </NavLink>
       </div>

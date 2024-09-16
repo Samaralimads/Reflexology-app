@@ -31,35 +31,54 @@
   text-decoration: none;
   display: inline-block;
   position: relative;
-  text-decoration: none;
   color: #000;
   font-size: 1rem;
   font-weight: 500;
   cursor: pointer;
 }
 
-.nav-links a:before {
-  content: "";
-  background: #fe8882;
-  display: block;
-  position: absolute;
-  bottom: -3px;
-  left: 0;
-  width: 0;
-  height: 3px;
-  transition: all 0.3s ease-in-out;
+.navLink.dropdown::after {
+  content: "▼";
+  font-size: 0.6rem;
+  margin-left: 5px;
+  transition: transform 0.3s ease;
 }
 
-.nav-links a:hover {
-  background-position: 0;
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%; /* Position the dropdown right below the parent */
+  left: 0;
+  background-color: #fff;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  list-style: none;
+  padding: 0;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-item {
+  padding: 12px 16px;
+  display: block;
+  color: #333;
+  text-decoration: none;
+}
+
+.navLink:hover,
+.dropdown-item:hover {
+  color: #fe8882;
 }
 
 .nav-links a:hover::before {
   width: 100%;
-}
-
-.nav-links a:visited {
-  color: black;
 }
 
 .burger-menu {
@@ -70,6 +89,7 @@
   .navbar {
     padding: 15px 50px;
   }
+
   .navLinks {
     display: none;
     flex-direction: column;
@@ -95,5 +115,21 @@
   .menu-icon {
     width: 40px;
     height: 40px;
+  }
+
+  .dropdown-menu {
+    position: static; /* Ensure dropdown is not absolute in mobile view */
+    background-color: transparent;
+    box-shadow: none;
+    display: none;
+    padding: 0;
+  }
+
+  .dropdown-menu.open {
+    display: block; /* Show dropdown when clicked */
+  }
+
+  .dropdown-item {
+    padding: 10px;
   }
 }
